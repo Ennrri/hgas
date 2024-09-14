@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/plant.png">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            <form id="registerForm" class="register-form">
+                <input type="text" id="registerUsername" name="username" placeholder="Usuario" required/>
+                <input type="password" id="registerPassword" name="password" placeholder="Contraseña" required/>
+                <button type="submit">Crear Cuenta</button>
+                <p class="message">¿Ya estás registrado? <a href="#">Inicia sesión</a></p>
+            </form>
+            <form id="loginForm" class="login-form" action="php/login.php" method="POST">
+                <input type="text" id="username" name="username" placeholder="Usuario" required/>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required/>
+                <button type="submit">Iniciar Sesión</button>
+                <p class="message">¿No estás registrado? <a href="#">Crea una cuenta</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/logjs.js"></script>
+</body>
+</html>

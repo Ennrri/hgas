@@ -1,0 +1,11 @@
+server {
+    listen 80;
+    server_name 5.161.207.34;
+
+    root /var/www/mi-sitio;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
