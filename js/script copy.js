@@ -7,7 +7,7 @@ function getRandomValue(min, max) {
 let pieChart, lineChart, barChart, additionalChart1, additionalChart2;
 
 async function fetchData() {
-    const response = await fetch('ruta_a_tu_api.php');
+    const response = await fetch('php/ruta_a_tu_api.php');
     const data = await response.json();
     const table = document.getElementById('data-table');
 

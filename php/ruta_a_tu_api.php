@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT sensores.nombre_sensor,sensores.ubicacion, lecturas.valor, lecturas.fecha_hora FROM lecturas JOIN sensores ON lecturas.id_sensor = sensores.id_sensor";
+$sql = "SELECT sensores.nombre_sensor, lecturas.valor, lecturas.fecha_hora FROM lecturas JOIN sensores ON lecturas.id_sensor = sensores.id_sensor";
 $result = $conn->query($sql);
 
 $data = array();

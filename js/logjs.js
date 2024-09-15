@@ -35,7 +35,7 @@ $(document).ready(function() {
         const password = $('#registerPassword').val();
 
         $.ajax({
-            url: 'register.php',
+            url: 'php/register.php',
             type: 'POST',
             data: { username: username, password: password },
             success: function(response) {

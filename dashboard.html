@@ -24,6 +24,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="dashboard.html">Inicio</a>
                 </li>
+                <!-- Configuración con Módulos -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="configuracionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Configuración
@@ -31,8 +32,32 @@
                     <div class="dropdown-menu" aria-labelledby="configuracionDropdown">
                         <a class="dropdown-item" href="configuracion.html">Ajustes Generales</a>
                         <a class="dropdown-item" href="cargar_usuarios.html">Cargar Usuarios</a>
-                        <a class="dropdown-item" href="lectura_sensores.html">Sensores</a>
-
+                        <div class="dropdown-divider"></div>
+                        <h6 class="dropdown-header">Módulos de Control</h6>
+                        <a class="dropdown-item" href="lectura_sensores.html">Control de Sensores</a>
+                        <a class="dropdown-item" href="control_actuadores.html">Control de Actuadores</a>
+                        <a class="dropdown-item" href="control_iluminacion.html">Control de Iluminación</a>
+                        <a class="dropdown-item" href="modulo_control_riego.html">Control de Riego</a>
+                        <a class="dropdown-item" href="control_nutrientes.html">Control de Nutrientes</a>
+                        <a class="dropdown-item" href="control_defensivos.html">Control de Defensivos Agrícolas</a>
+                        <a class="dropdown-item" href="control_ph.html">Control de pH</a>
+                        <a class="dropdown-item" href="control_co2.html">Control de CO2</a>
+                        <a class="dropdown-item" href="monitoreo_alerta.html">Monitoreo y Alerta</a>
+                    </div>
+                </li>
+                <!-- Panel de Análisis -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="analisisDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Panel de Análisis
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="analisisDropdown">
+                        <h6 class="dropdown-header">Submódulos</h6>
+                        <a class="dropdown-item" href="clima_actual_ambiente.html">Clima Actual Ambiente</a>
+                        <a class="dropdown-item" href="clima_actual_invernadero.html">Clima Actual Invernadero</a>
+                        <a class="dropdown-item" href="fenologia_cultivos.html">Fenología de Cultivos - Tomate</a>
+                        <a class="dropdown-item" href="registro_fotografias.html">Registro de Fotografías</a>
+                        <a class="dropdown-item" href="mediciones_cultivos.html">Mediciones de Cultivos</a>
+                        <a class="dropdown-item" href="observaciones.html">Observaciones</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -97,10 +122,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function logout() {
-            // Aquí puedes agregar el código para cerrar la sesión
-            // Por ejemplo, una llamada a una API para cerrar la sesión
-
-            // Redirigir a index.html
             window.location.href = 'index.html';
         }
 
@@ -112,11 +133,9 @@
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'legal' });
 
-            // Añadir título
             doc.setFontSize(20);
             doc.text("Informe de Datos de Sensores", 40, 40);
 
-            // Añadir tabla
             const table = document.getElementById("data-table");
             const rows = table.querySelectorAll("tr");
             let y = 60;
@@ -130,7 +149,6 @@
                 y += 20;
             });
 
-            // Añadir gráficos
             const charts = document.querySelectorAll("canvas");
             let chartY = y + 20;
             for (const chart of charts) {
@@ -139,7 +157,6 @@
                 chartY += 220;
             }
 
-            // Guardar PDF
             doc.save("informe.pdf");
             $('#formatModal').modal('hide');
         }

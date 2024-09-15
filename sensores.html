@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Sensores</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/sensores.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="dashboard.html">Inicio</a>
+        <a href="configuracion.html">Configuración</a>
+        <span id="username"></span>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
+
+    <div class="container">
+        <h1>Datos de Sensores</h1>
+        <table id="data-table" class="styled-table">
+            <thead>
+                <tr>
+                    <th>Sensor</th>
+                    <th>Ubicación</th>
+                    <th>Valor</th>
+                    <th>Fecha y Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Datos se llenarán aquí -->
+            </tbody>
+        </table>
+
+        <!-- Gráfico -->
+        <div class="chart-wrapper">
+            <canvas id="sensorChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

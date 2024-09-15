@@ -1,7 +1,7 @@
 // Archivo: lecturas.js
 
 function obtenerLecturas() {
-    fetch('get_lecturas.php')
+    fetch('php/get_lecturas.php')
         .then(response => response.json())
         .then(data => {
             let tabla = document.getElementById('tabla-lecturas');
